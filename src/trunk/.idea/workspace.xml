@@ -1,0 +1,1898 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" readonly="true" id="0678b933-95ba-46d7-92ff-024af64e43bd" name="Default" comment="" />
+    <ignored path="WebOrdering.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="DebuggerManager">
+    <breakpoint_any converted="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <ui_properties converted="true" />
+    <breakpoint_rules converted="true" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="WebOrdering" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="BasketBusinessProcessing.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/service/BasketBusinessProcessing.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="9588">
+              <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommonService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/service/CommonService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1224" max-vertical-offset="2125">
+              <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1156">
+              <caret line="15" column="31" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="applicationContext.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/spring/applicationContext.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="544">
+              <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="122" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OcpProizvod.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/domain/ocp/OcpProizvod.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="13855" max-vertical-offset="15062">
+              <caret line="815" column="30" selection-start-line="815" selection-start-column="16" selection-end-line="815" selection-end-column="39" />
+              <folding>
+                <marker date="1413665689979" expanded="true" signature="4052:6302" placeholder="select p.PRO..Ocp_Proizvod..." />
+                <marker date="1413665689979" expanded="true" signature="5287:5830" placeholder="select 1 fro..wo_partner_settings..." />
+                <marker date="1413665689979" expanded="true" signature="5876:6186" placeholder="select 1 fro..ocp_klasifikacija_proizvoda..." />
+                <marker date="1413665689979" expanded="true" signature="6427:8766" placeholder="select p.PRO..Ocp_Proizvod..." />
+                <marker date="1413665689979" expanded="true" signature="7654:8197" placeholder="select 1 fro..wo_partner_settings..." />
+                <marker date="1413665689979" expanded="true" signature="8399:8698" placeholder="select 1 fro..ocp_klasifikacija_proizvoda..." />
+                <marker date="1413665689979" expanded="true" signature="8897:11692" placeholder="select p.PRO..Ocp_Proizvod..." />
+                <marker date="1413665689979" expanded="true" signature="10127:10670" placeholder="select 1 fro..wo_partner_settings..." />
+                <marker date="1413665689979" expanded="true" signature="11327:11626" placeholder="select 1 fro..ocp_klasifikacija_proizvoda..." />
+                <marker date="1413665689979" expanded="true" signature="11825:14970" placeholder="select p.PRO..Ocp_Proizvod..." />
+                <marker date="1413665689979" expanded="true" signature="13102:13538" placeholder="select 1 fro..wo_artikli_na_akciji..." />
+                <marker date="1413665689979" expanded="true" signature="13585:14128" placeholder="select 1 fro..wo_partner_settings..." />
+                <marker date="1413665689979" expanded="true" signature="15097:17749" placeholder="select p.PRO..Ocp_Proizvod..." />
+                <marker date="1413665689979" expanded="true" signature="16525:17068" placeholder="select 1 fro..wo_partner_settings..." />
+                <marker date="1413665689979" expanded="true" signature="17886:20942" placeholder="select p.PRO..Ocp_Proizvod..." />
+                <marker date="1413665689979" expanded="true" signature="19308:19851" placeholder="select 1 fro..wo_partner_settings..." />
+                <marker date="1413665689979" expanded="true" signature="20509:20817" placeholder="select 1 fro..ocp_klasifikacija_proizvoda..." />
+                <marker date="1413665689979" expanded="true" signature="21081:23472" placeholder="select p.PRO..Ocp_Proizvod..." />
+                <marker date="1413665689979" expanded="true" signature="22457:23000" placeholder="select 1 fro..wo_partner_settings..." />
+                <marker date="1413665689979" expanded="true" signature="23046:23356" placeholder="select 1 fro..ocp_klasifikacija_proizvoda..." />
+                <marker date="1413665689979" expanded="true" signature="23588:24397" placeholder="select ps.* ..prod_proizvod_pk..." />
+                <marker date="1413665689979" expanded="true" signature="24272:24339" placeholder="-- uslov koj..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProductService.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/service/ProductService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.3183391" vertical-offset="938" max-vertical-offset="4080">
+              <caret line="89" column="76" selection-start-line="89" selection-start-column="76" selection-end-line="89" selection-end-column="76" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BasketControllerN.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/mvc/BasketControllerN.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3434">
+              <caret line="37" column="72" selection-start-line="37" selection-start-column="3" selection-end-line="37" selection-end-column="3" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#7028#7051#0" expanded="true" />
+                <element signature="e#9183#9191#0" expanded="true" />
+                <element signature="e#10960#10973#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WoArtikliNaAkcijiHome.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/dao/wo/WoArtikliNaAkcijiHome.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="1700">
+              <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/header.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+              <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="true" />
+    </FindUsagesManager>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/rs/invado/wo/domain/ocp/OcpPoslovniPartner.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rs/invado/wo/domain/wo/WoPartnerSetting.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/basket.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/rs/invado/wo/domain/uz/UzDokumentStavkaPakovanjeId.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/right.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/rs/invado/wo/dto/ZalihaPoPakovanjima.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rs/invado/wo/domain/ocp/OcpProizvod.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rs/invado/wo/domain/uz/UzZaliheJskl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rs/invado/wo/dao/ocp/OcpKlasifikacijaHome.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rs/invado/wo/dao/uz/UzStanjeZalihaSkladistaHome.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rs/invado/wo/dao/uz/UzZaliheJsklHome.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rs/invado/wo/dao/ocp/OcpProizvodHome.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rs/invado/wo/dto/IncreaseReservation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rs/invado/wo/service/CommonService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rs/invado/wo/service/LogOnService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rs/invado/wo/service/ProductService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/rs/invado/wo/service/BasketBusinessProcessing.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/web_ordering.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/header.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/rs/invado/wo/mvc/BasketController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rs/invado/wo/mvc/BasketControllerN.java" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="WebOrdering" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Dependencies" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$DependenciesNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="WebOrdering" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Plugins" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginsNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="WebOrdering" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Plugins" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginsNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="jboss-as" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="WebOrdering" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Lifecycle" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1932" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <OptionsSetting value="true" id="Undo Check Out" />
+    <OptionsSetting value="true" id="Get Latest Version" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebOrdering" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebOrdering" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebOrderingChk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebOrdering" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebOrderingChk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="FullScreen" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
+      <module name="" />
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="depsClasspath" value="false" />
+      <setting name="passParentEnv" value="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <setting name="launchBrowser" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
+      <option name="BCName" value="" />
+      <option name="IOSSimulatorSdkPath" value="" />
+      <option name="adlOptions" value="" />
+      <option name="airProgramParameters" value="" />
+      <option name="appDescriptorForEmulator" value="Android" />
+      <option name="debugTransport" value="USB" />
+      <option name="debuggerSdkRaw" value="BC SDK" />
+      <option name="emulator" value="NexusOne" />
+      <option name="emulatorAdlOptions" value="" />
+      <option name="fastPackaging" value="true" />
+      <option name="fullScreenHeight" value="0" />
+      <option name="fullScreenWidth" value="0" />
+      <option name="launchUrl" value="false" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="mobileRunTarget" value="Emulator" />
+      <option name="moduleName" value="" />
+      <option name="overriddenMainClass" value="" />
+      <option name="overriddenOutputFileName" value="" />
+      <option name="overrideMainClass" value="false" />
+      <option name="runTrusted" value="true" />
+      <option name="screenDpi" value="0" />
+      <option name="screenHeight" value="0" />
+      <option name="screenWidth" value="0" />
+      <option name="url" value="http://" />
+      <option name="usbDebugPort" value="7936" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
+      <option name="BCName" value="" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="" />
+      <option name="trusted" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="myFilePath" />
+      <option name="GLUE" />
+      <option name="myNameFilter" />
+      <option name="myGeneratedName" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <list size="0" />
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" myUseAcceleration="nothing" cleanupOnStartRun="true">
+    <configuration>C:\Users\NikolaB.Nikola\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="E:\Nikola\Invado\WebOrderingChk" />
+          <option name="myCopyRoot" value="E:\Nikola\Invado\WebOrderingChk" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="E:\Nikola\Invado\WebOrderingChk" />
+          <option name="myCopyRoot" value="E:\Nikola\Invado\WebOrderingChk" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0678b933-95ba-46d7-92ff-024af64e43bd" name="Default" comment="" />
+      <created>1409347343214</created>
+      <updated>1409347343214</updated>
+      <workItem from="1409347347185" duration="3700000" />
+      <workItem from="1409687752741" duration="6965000" />
+      <workItem from="1409775588914" duration="2070000" />
+      <workItem from="1409940211713" duration="3306000" />
+      <workItem from="1411037736989" duration="610000" />
+      <workItem from="1411156009257" duration="6912000" />
+      <workItem from="1411414915480" duration="4276000" />
+      <workItem from="1411499663215" duration="319000" />
+      <workItem from="1411594057897" duration="279000" />
+      <workItem from="1411906176504" duration="604000" />
+      <workItem from="1411936999598" duration="753000" />
+      <workItem from="1412184576797" duration="3227000" />
+      <workItem from="1412189887734" duration="960000" />
+      <workItem from="1412285167819" duration="34000" />
+      <workItem from="1412285234565" duration="1369000" />
+      <workItem from="1412370741044" duration="112000" />
+      <workItem from="1412499142397" duration="8177000" />
+      <workItem from="1412518707780" duration="2750000" />
+      <workItem from="1412521482127" duration="4211000" />
+      <workItem from="1412708807448" duration="111000" />
+      <workItem from="1412798533651" duration="599000" />
+      <workItem from="1412884246060" duration="328000" />
+      <workItem from="1412886856665" duration="599000" />
+      <workItem from="1413026321004" duration="254000" />
+      <workItem from="1413055594671" duration="63000" />
+      <workItem from="1413055686766" duration="702000" />
+      <workItem from="1413131294889" duration="18728000" />
+      <workItem from="1413231542552" duration="975000" />
+      <workItem from="1413317205251" duration="599000" />
+      <workItem from="1413397687777" duration="6046000" />
+      <workItem from="1413575204936" duration="342000" />
+      <workItem from="1413576074359" duration="14476000" />
+      <workItem from="1413647917602" duration="15328000" />
+      <workItem from="1413710676223" duration="6576000" />
+      <workItem from="1413732524438" duration="8850000" />
+      <workItem from="1413836031894" duration="665000" />
+      <workItem from="1413897039200" duration="3871000" />
+      <workItem from="1414061074405" duration="1872000" />
+      <workItem from="1414149888773" duration="605000" />
+      <workItem from="1414445354367" duration="155000" />
+      <workItem from="1414445706058" duration="2896000" />
+      <workItem from="1414516164139" duration="620000" />
+      <workItem from="1414615085017" duration="2719000" />
+      <workItem from="1414704725635" duration="674000" />
+      <workItem from="1415050160436" duration="792000" />
+      <workItem from="1415052815732" duration="873000" />
+      <workItem from="1415135718891" duration="310000" />
+      <workItem from="1415213407006" duration="605000" />
+      <workItem from="1415228130833" duration="802000" />
+      <workItem from="1415304539088" duration="1775000" />
+    </task>
+    <task id="LOCAL-00001">
+      <created>1409347629143</created>
+      <updated>1409347629143</updated>
+    </task>
+    <task id="LOCAL-00002">
+      <created>1409690048671</created>
+      <updated>1409690048671</updated>
+    </task>
+    <task id="LOCAL-00003">
+      <created>1409690793136</created>
+      <updated>1409690793136</updated>
+    </task>
+    <task id="LOCAL-00004">
+      <created>1409691756196</created>
+      <updated>1409691756196</updated>
+    </task>
+    <task id="LOCAL-00005">
+      <created>1409693074183</created>
+      <updated>1409693074183</updated>
+    </task>
+    <task id="LOCAL-00006">
+      <created>1409693512145</created>
+      <updated>1409693512145</updated>
+    </task>
+    <task id="LOCAL-00007">
+      <created>1409694393413</created>
+      <updated>1409694393413</updated>
+    </task>
+    <task id="LOCAL-00008">
+      <created>1409776438176</created>
+      <updated>1409776438176</updated>
+    </task>
+    <task id="LOCAL-00009">
+      <created>1409776597128</created>
+      <updated>1409776597128</updated>
+    </task>
+    <task id="LOCAL-00010">
+      <created>1409940316146</created>
+      <updated>1409940316146</updated>
+    </task>
+    <task id="LOCAL-00011">
+      <created>1409947191116</created>
+      <updated>1409947191116</updated>
+    </task>
+    <task id="LOCAL-00012">
+      <created>1409947352208</created>
+      <updated>1409947352208</updated>
+    </task>
+    <task id="LOCAL-00013">
+      <created>1409947665124</created>
+      <updated>1409947665124</updated>
+    </task>
+    <task id="LOCAL-00014">
+      <created>1409948041118</created>
+      <updated>1409948041118</updated>
+    </task>
+    <task id="LOCAL-00015">
+      <created>1409948387139</created>
+      <updated>1409948387139</updated>
+    </task>
+    <task id="LOCAL-00016">
+      <created>1411156567126</created>
+      <updated>1411156567126</updated>
+    </task>
+    <task id="LOCAL-00017">
+      <created>1411157131136</created>
+      <updated>1411157131136</updated>
+    </task>
+    <task id="LOCAL-00018">
+      <created>1411243044119</created>
+      <updated>1411243044119</updated>
+    </task>
+    <task id="LOCAL-00019">
+      <created>1411243551159</created>
+      <updated>1411243551159</updated>
+    </task>
+    <task id="LOCAL-00020">
+      <created>1411244081129</created>
+      <updated>1411244081129</updated>
+    </task>
+    <task id="LOCAL-00021">
+      <created>1411244332115</created>
+      <updated>1411244332115</updated>
+    </task>
+    <task id="LOCAL-00022">
+      <created>1411244793114</created>
+      <updated>1411244793114</updated>
+    </task>
+    <task id="LOCAL-00023">
+      <created>1411244929126</created>
+      <updated>1411244929126</updated>
+    </task>
+    <task id="LOCAL-00024">
+      <created>1411245269180</created>
+      <updated>1411245269180</updated>
+    </task>
+    <task id="LOCAL-00025">
+      <created>1411415050354</created>
+      <updated>1411415050354</updated>
+    </task>
+    <task id="LOCAL-00026">
+      <created>1411415503209</created>
+      <updated>1411415503209</updated>
+    </task>
+    <task id="LOCAL-00027">
+      <created>1411415704205</created>
+      <updated>1411415704205</updated>
+    </task>
+    <task id="LOCAL-00028">
+      <created>1411415910205</created>
+      <updated>1411415910205</updated>
+    </task>
+    <task id="LOCAL-00029">
+      <created>1411416194197</created>
+      <updated>1411416194197</updated>
+    </task>
+    <task id="LOCAL-00030">
+      <created>1411416494215</created>
+      <updated>1411416494215</updated>
+    </task>
+    <task id="LOCAL-00031">
+      <created>1411416738165</created>
+      <updated>1411416738165</updated>
+    </task>
+    <task id="LOCAL-00032">
+      <created>1411416962193</created>
+      <updated>1411416962193</updated>
+    </task>
+    <task id="LOCAL-00033">
+      <created>1411417191246</created>
+      <updated>1411417191246</updated>
+    </task>
+    <task id="LOCAL-00034">
+      <created>1411417912202</created>
+      <updated>1411417912202</updated>
+    </task>
+    <task id="LOCAL-00035">
+      <created>1411418387195</created>
+      <updated>1411418387195</updated>
+    </task>
+    <task id="LOCAL-00036">
+      <created>1411418958351</created>
+      <updated>1411418958351</updated>
+    </task>
+    <task id="LOCAL-00037">
+      <created>1412287725138</created>
+      <updated>1412287725138</updated>
+    </task>
+    <task id="LOCAL-00038">
+      <created>1412287970105</created>
+      <updated>1412287970105</updated>
+    </task>
+    <task id="LOCAL-00039">
+      <created>1412288320114</created>
+      <updated>1412288320114</updated>
+    </task>
+    <task id="LOCAL-00040">
+      <created>1412510557283</created>
+      <updated>1412510557283</updated>
+    </task>
+    <task id="LOCAL-00041">
+      <created>1412511019254</created>
+      <updated>1412511019254</updated>
+    </task>
+    <task id="LOCAL-00042">
+      <created>1412511344396</created>
+      <updated>1412511344396</updated>
+    </task>
+    <task id="LOCAL-00043">
+      <created>1412511363205</created>
+      <updated>1412511363205</updated>
+    </task>
+    <task id="LOCAL-00044">
+      <created>1412511626214</created>
+      <updated>1412511626214</updated>
+    </task>
+    <task id="LOCAL-00045">
+      <created>1412512571177</created>
+      <updated>1412512571177</updated>
+    </task>
+    <task id="LOCAL-00046">
+      <created>1412512664157</created>
+      <updated>1412512664157</updated>
+    </task>
+    <task id="LOCAL-00047">
+      <created>1412519241136</created>
+      <updated>1412519241136</updated>
+    </task>
+    <task id="LOCAL-00048">
+      <created>1412519487108</created>
+      <updated>1412519487108</updated>
+    </task>
+    <task id="LOCAL-00049">
+      <created>1412519736224</created>
+      <updated>1412519736224</updated>
+    </task>
+    <task id="LOCAL-00050">
+      <created>1412520120112</created>
+      <updated>1412520120112</updated>
+    </task>
+    <task id="LOCAL-00051">
+      <created>1412520400112</created>
+      <updated>1412520400112</updated>
+    </task>
+    <task id="LOCAL-00052">
+      <created>1412520819105</created>
+      <updated>1412520819105</updated>
+    </task>
+    <task id="LOCAL-00053">
+      <created>1412521208110</created>
+      <updated>1412521208110</updated>
+    </task>
+    <task id="LOCAL-00054">
+      <created>1412521641142</created>
+      <updated>1412521641142</updated>
+    </task>
+    <task id="LOCAL-00055">
+      <created>1412521910156</created>
+      <updated>1412521910156</updated>
+    </task>
+    <task id="LOCAL-00056">
+      <created>1412522307128</created>
+      <updated>1412522307128</updated>
+    </task>
+    <task id="LOCAL-00057">
+      <created>1412522729115</created>
+      <updated>1412522729115</updated>
+    </task>
+    <task id="LOCAL-00058">
+      <created>1412522943147</created>
+      <updated>1412522943147</updated>
+    </task>
+    <task id="LOCAL-00059">
+      <created>1412523368108</created>
+      <updated>1412523368108</updated>
+    </task>
+    <task id="LOCAL-00060">
+      <created>1412523562129</created>
+      <updated>1412523562129</updated>
+    </task>
+    <task id="LOCAL-00061">
+      <created>1413132336145</created>
+      <updated>1413132336145</updated>
+    </task>
+    <task id="LOCAL-00062">
+      <created>1413133349106</created>
+      <updated>1413133349106</updated>
+    </task>
+    <task id="LOCAL-00063">
+      <created>1413134708108</created>
+      <updated>1413134708108</updated>
+    </task>
+    <task id="LOCAL-00064">
+      <created>1413135271115</created>
+      <updated>1413135271115</updated>
+    </task>
+    <task id="LOCAL-00065">
+      <created>1413135676205</created>
+      <updated>1413135676205</updated>
+    </task>
+    <task id="LOCAL-00066">
+      <created>1413136082106</created>
+      <updated>1413136082106</updated>
+    </task>
+    <task id="LOCAL-00067">
+      <created>1413136260106</created>
+      <updated>1413136260106</updated>
+    </task>
+    <task id="LOCAL-00068">
+      <created>1413140892119</created>
+      <updated>1413140892119</updated>
+    </task>
+    <task id="LOCAL-00069">
+      <created>1413141612114</created>
+      <updated>1413141612114</updated>
+    </task>
+    <task id="LOCAL-00070">
+      <created>1413142128117</created>
+      <updated>1413142128117</updated>
+    </task>
+    <task id="LOCAL-00071">
+      <created>1413142479113</created>
+      <updated>1413142479113</updated>
+    </task>
+    <task id="LOCAL-00072">
+      <created>1413142642113</created>
+      <updated>1413142642114</updated>
+    </task>
+    <task id="LOCAL-00073">
+      <created>1413143128115</created>
+      <updated>1413143128115</updated>
+    </task>
+    <task id="LOCAL-00074">
+      <created>1413143505107</created>
+      <updated>1413143505107</updated>
+    </task>
+    <task id="LOCAL-00075">
+      <created>1413143702114</created>
+      <updated>1413143702114</updated>
+    </task>
+    <task id="LOCAL-00076">
+      <created>1413144030112</created>
+      <updated>1413144030113</updated>
+    </task>
+    <task id="LOCAL-00077">
+      <created>1413144067106</created>
+      <updated>1413144067106</updated>
+    </task>
+    <task id="LOCAL-00078">
+      <created>1413144356115</created>
+      <updated>1413144356116</updated>
+    </task>
+    <task id="LOCAL-00079">
+      <created>1413144891107</created>
+      <updated>1413144891107</updated>
+    </task>
+    <task id="LOCAL-00080">
+      <created>1413145262115</created>
+      <updated>1413145262115</updated>
+    </task>
+    <task id="LOCAL-00081">
+      <created>1413146671105</created>
+      <updated>1413146671105</updated>
+    </task>
+    <task id="LOCAL-00082">
+      <created>1413148212106</created>
+      <updated>1413148212106</updated>
+    </task>
+    <task id="LOCAL-00083">
+      <created>1413150490107</created>
+      <updated>1413150490107</updated>
+    </task>
+    <task id="LOCAL-00084">
+      <created>1413150747537</created>
+      <updated>1413150747537</updated>
+    </task>
+    <task id="LOCAL-00085">
+      <created>1413398561166</created>
+      <updated>1413398561167</updated>
+    </task>
+    <task id="LOCAL-00086">
+      <created>1413399121107</created>
+      <updated>1413399121107</updated>
+    </task>
+    <task id="LOCAL-00087">
+      <created>1413400401117</created>
+      <updated>1413400401117</updated>
+    </task>
+    <task id="LOCAL-00088">
+      <created>1413401751107</created>
+      <updated>1413401751107</updated>
+    </task>
+    <task id="LOCAL-00089">
+      <created>1413402479115</created>
+      <updated>1413402479115</updated>
+    </task>
+    <task id="LOCAL-00090">
+      <created>1413402635105</created>
+      <updated>1413402635105</updated>
+    </task>
+    <task id="LOCAL-00091">
+      <created>1413576157144</created>
+      <updated>1413576157144</updated>
+    </task>
+    <task id="LOCAL-00092">
+      <created>1413576492116</created>
+      <updated>1413576492116</updated>
+    </task>
+    <task id="LOCAL-00093">
+      <created>1413577132115</created>
+      <updated>1413577132115</updated>
+    </task>
+    <task id="LOCAL-00094">
+      <created>1413577632114</created>
+      <updated>1413577632114</updated>
+    </task>
+    <task id="LOCAL-00095">
+      <created>1413578701116</created>
+      <updated>1413578701117</updated>
+    </task>
+    <task id="LOCAL-00096">
+      <created>1413578968129</created>
+      <updated>1413578968129</updated>
+    </task>
+    <task id="LOCAL-00097">
+      <created>1413579148120</created>
+      <updated>1413579148120</updated>
+    </task>
+    <task id="LOCAL-00098">
+      <created>1413580362114</created>
+      <updated>1413580362114</updated>
+    </task>
+    <task id="LOCAL-00099">
+      <created>1413580698107</created>
+      <updated>1413580698107</updated>
+    </task>
+    <task id="LOCAL-00100">
+      <created>1413580866108</created>
+      <updated>1413580866108</updated>
+    </task>
+    <task id="LOCAL-00101">
+      <created>1413627486107</created>
+      <updated>1413627486107</updated>
+    </task>
+    <task id="LOCAL-00102">
+      <created>1413628653100</created>
+      <updated>1413628653100</updated>
+    </task>
+    <task id="LOCAL-00103">
+      <created>1413628878109</created>
+      <updated>1413628878109</updated>
+    </task>
+    <task id="LOCAL-00104">
+      <created>1413629922101</created>
+      <updated>1413629922101</updated>
+    </task>
+    <task id="LOCAL-00105">
+      <created>1413630468118</created>
+      <updated>1413630468118</updated>
+    </task>
+    <task id="LOCAL-00106">
+      <created>1413630924178</created>
+      <updated>1413630924178</updated>
+    </task>
+    <task id="LOCAL-00107">
+      <created>1413631173111</created>
+      <updated>1413631173111</updated>
+    </task>
+    <task id="LOCAL-00108">
+      <created>1413632669102</created>
+      <updated>1413632669102</updated>
+    </task>
+    <task id="LOCAL-00109">
+      <created>1413634183101</created>
+      <updated>1413634183101</updated>
+    </task>
+    <task id="LOCAL-00110">
+      <created>1413635613100</created>
+      <updated>1413635613100</updated>
+    </task>
+    <task id="LOCAL-00111">
+      <created>1413636130100</created>
+      <updated>1413636130100</updated>
+    </task>
+    <task id="LOCAL-00112">
+      <created>1413650575552</created>
+      <updated>1413650575552</updated>
+    </task>
+    <task id="LOCAL-00113">
+      <created>1413651110133</created>
+      <updated>1413651110133</updated>
+    </task>
+    <task id="LOCAL-00114">
+      <created>1413656733107</created>
+      <updated>1413656733107</updated>
+    </task>
+    <task id="LOCAL-00115">
+      <created>1413657028116</created>
+      <updated>1413657028116</updated>
+    </task>
+    <task id="LOCAL-00116">
+      <created>1413657211107</created>
+      <updated>1413657211107</updated>
+    </task>
+    <task id="LOCAL-00117">
+      <created>1413661175108</created>
+      <updated>1413661175108</updated>
+    </task>
+    <task id="LOCAL-00118">
+      <created>1413661492186</created>
+      <updated>1413661492186</updated>
+    </task>
+    <task id="LOCAL-00119">
+      <created>1413663116108</created>
+      <updated>1413663116108</updated>
+    </task>
+    <task id="LOCAL-00120">
+      <created>1413663208116</created>
+      <updated>1413663208116</updated>
+    </task>
+    <task id="LOCAL-00121">
+      <created>1413663488116</created>
+      <updated>1413663488116</updated>
+    </task>
+    <task id="LOCAL-00122">
+      <created>1413664411107</created>
+      <updated>1413664411107</updated>
+    </task>
+    <task id="LOCAL-00123">
+      <created>1413665832109</created>
+      <updated>1413665832109</updated>
+    </task>
+    <task id="LOCAL-00124">
+      <created>1413666124115</created>
+      <updated>1413666124115</updated>
+    </task>
+    <task id="LOCAL-00125">
+      <created>1413666345116</created>
+      <updated>1413666345116</updated>
+    </task>
+    <task id="LOCAL-00126">
+      <created>1413666493106</created>
+      <updated>1413666493106</updated>
+    </task>
+    <task id="LOCAL-00127">
+      <created>1413666808110</created>
+      <updated>1413666808110</updated>
+    </task>
+    <task id="LOCAL-00128">
+      <created>1413668237116</created>
+      <updated>1413668237116</updated>
+    </task>
+    <task id="LOCAL-00129">
+      <created>1413711013417</created>
+      <updated>1413711013417</updated>
+    </task>
+    <task id="LOCAL-00130">
+      <created>1413711554116</created>
+      <updated>1413711554117</updated>
+    </task>
+    <task id="LOCAL-00131">
+      <created>1413712002107</created>
+      <updated>1413712002107</updated>
+    </task>
+    <task id="LOCAL-00132">
+      <created>1413712496109</created>
+      <updated>1413712496110</updated>
+    </task>
+    <task id="LOCAL-00133">
+      <created>1413713115107</created>
+      <updated>1413713115107</updated>
+    </task>
+    <task id="LOCAL-00134">
+      <created>1413720506118</created>
+      <updated>1413720506119</updated>
+    </task>
+    <task id="LOCAL-00135">
+      <created>1413720648108</created>
+      <updated>1413720648108</updated>
+    </task>
+    <task id="LOCAL-00136">
+      <created>1413721472165</created>
+      <updated>1413721472165</updated>
+    </task>
+    <task id="LOCAL-00137">
+      <created>1413723399117</created>
+      <updated>1413723399117</updated>
+    </task>
+    <task id="LOCAL-00138">
+      <created>1413733024169</created>
+      <updated>1413733024169</updated>
+    </task>
+    <task id="LOCAL-00139">
+      <created>1413734296122</created>
+      <updated>1413734296122</updated>
+    </task>
+    <task id="LOCAL-00140">
+      <created>1413734554129</created>
+      <updated>1413734554129</updated>
+    </task>
+    <task id="LOCAL-00141">
+      <created>1413737478108</created>
+      <updated>1413737478108</updated>
+    </task>
+    <task id="LOCAL-00142">
+      <created>1413738729118</created>
+      <updated>1413738729118</updated>
+    </task>
+    <task id="LOCAL-00143">
+      <created>1413740570106</created>
+      <updated>1413740570106</updated>
+    </task>
+    <task id="LOCAL-00144">
+      <created>1413741532106</created>
+      <updated>1413741532106</updated>
+    </task>
+    <task id="LOCAL-00145">
+      <created>1413741706118</created>
+      <updated>1413741706118</updated>
+    </task>
+    <task id="LOCAL-00146">
+      <created>1413741976229</created>
+      <updated>1413741976229</updated>
+    </task>
+    <task id="LOCAL-00147">
+      <created>1413743399113</created>
+      <updated>1413743399113</updated>
+    </task>
+    <task id="LOCAL-00148">
+      <created>1413743754110</created>
+      <updated>1413743754110</updated>
+    </task>
+    <task id="LOCAL-00149">
+      <created>1413836098107</created>
+      <updated>1413836098107</updated>
+    </task>
+    <task id="LOCAL-00150" summary="Rejected commit: Default">
+      <created>1413897375164</created>
+      <updated>1413897375164</updated>
+    </task>
+    <task id="LOCAL-00151" summary="Rejected commit: Default">
+      <created>1413898638117</created>
+      <updated>1413898638117</updated>
+    </task>
+    <task id="LOCAL-00152" summary="Rejected commit: Default">
+      <created>1413899441110</created>
+      <updated>1413899441110</updated>
+    </task>
+    <task id="LOCAL-00153" summary="Rejected commit: Default">
+      <created>1413899692109</created>
+      <updated>1413899692109</updated>
+    </task>
+    <task id="LOCAL-00154" summary="Rejected commit: Default">
+      <created>1413899857111</created>
+      <updated>1413899857111</updated>
+    </task>
+    <task id="LOCAL-00155" summary="Rejected commit: Default">
+      <created>1413901736115</created>
+      <updated>1413901736115</updated>
+    </task>
+    <task id="LOCAL-00156" summary="Rejected commit: Default">
+      <created>1414445934140</created>
+      <updated>1414445934140</updated>
+    </task>
+    <task id="LOCAL-00157" summary="Rejected commit: Default">
+      <created>1414446894130</created>
+      <updated>1414446894130</updated>
+    </task>
+    <task id="LOCAL-00158" summary="Rejected commit: Default">
+      <created>1414616023197</created>
+      <updated>1414616023197</updated>
+    </task>
+    <task id="LOCAL-00159" summary="Rejected commit: Default">
+      <created>1414616578442</created>
+      <updated>1414616578443</updated>
+    </task>
+    <task id="LOCAL-00160" summary="Rejected commit: Default">
+      <created>1414616934118</created>
+      <updated>1414616934118</updated>
+    </task>
+    <task id="LOCAL-00161" summary="Rejected commit: Default">
+      <created>1414617220312</created>
+      <updated>1414617220312</updated>
+    </task>
+    <task id="LOCAL-00162" summary="Rejected commit: Default">
+      <created>1415305647187</created>
+      <updated>1415305647188</updated>
+    </task>
+    <task id="LOCAL-00163" summary="Rejected commit: Default">
+      <created>1415305821116</created>
+      <updated>1415305821116</updated>
+    </task>
+    <option name="localTasksCounter" value="164" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="144444000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="ConsoleMavenPlugin" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20971185" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32739422" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3995657" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32739422" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25364584" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+    <MESSAGE value="Rejected commit: Default" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rejected commit: Default" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/header.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="714" max-vertical-offset="1326">
+          <caret line="52" column="27" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/service/LogOnService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1074" max-vertical-offset="2363">
+          <caret line="121" column="104" selection-start-line="120" selection-start-column="0" selection-end-line="121" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/service/ProductService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4471">
+          <caret line="144" column="0" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/util/SessionTimeoutFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="1326">
+          <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/mvc/ProizvodiController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="1887">
+          <caret line="39" column="45" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/dao/ocp/OcpProizvodHome.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="7735" max-vertical-offset="7922">
+          <caret line="455" column="0" selection-start-line="455" selection-start-column="0" selection-end-line="455" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/service/BasketBusinessProcessing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2210" max-vertical-offset="3808">
+          <caret line="130" column="38" selection-start-line="130" selection-start-column="38" selection-end-line="130" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/header.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="714" max-vertical-offset="1326">
+          <caret line="52" column="27" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/service/LogOnService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2040" max-vertical-offset="2822">
+          <caret line="120" column="0" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/service/ProductService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4471">
+          <caret line="144" column="0" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/util/SessionTimeoutFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="1326">
+          <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/layout.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="468" max-vertical-offset="1122">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="655" max-vertical-offset="1258">
+          <caret line="54" column="71" selection-start-line="54" selection-start-column="71" selection-end-line="54" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/dao/ocp/OcpProizvodHome.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="7735" max-vertical-offset="7922">
+          <caret line="455" column="0" selection-start-line="455" selection-start-column="0" selection-end-line="455" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/dto/IncreaseReservation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="2584">
+          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/service/BasketBusinessProcessing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1972" max-vertical-offset="9962">
+          <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/service/CommonService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1224" max-vertical-offset="2125">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/service/LogOnService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2040" max-vertical-offset="2822">
+          <caret line="120" column="0" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/service/ProductService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4471">
+          <caret line="144" column="0" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/util/SessionTimeoutFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="1326">
+          <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/layout.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="468" max-vertical-offset="1122">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="655" max-vertical-offset="1258">
+          <caret line="54" column="71" selection-start-line="54" selection-start-column="71" selection-end-line="54" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/dao/ocp/OcpProizvodHome.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="7735" max-vertical-offset="7922">
+          <caret line="455" column="0" selection-start-line="455" selection-start-column="0" selection-end-line="455" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/dto/IncreaseReservation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="2584">
+          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/service/BasketBusinessProcessing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1972" max-vertical-offset="9962">
+          <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/service/CommonService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1224" max-vertical-offset="2125">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/service/LogOnService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2040" max-vertical-offset="2822">
+          <caret line="120" column="0" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/dao/uz/UzStanjeZalihaSkladistaHome.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1095" max-vertical-offset="1887">
+          <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/dao/uz/UzZaliheJsklHome.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1822" max-vertical-offset="2414">
+          <caret line="130" column="0" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/dao/ocp/OcpKlasifikacijaHome.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1486" max-vertical-offset="2193">
+          <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/service/LogOnService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1074" max-vertical-offset="2363">
+          <caret line="121" column="104" selection-start-line="120" selection-start-column="0" selection-end-line="121" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/util/SessionTimeoutFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="184" max-vertical-offset="1275">
+          <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/dto/IncreaseReservation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="755" max-vertical-offset="1870">
+          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/layout.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.9158513" vertical-offset="468" max-vertical-offset="1122">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/home.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5067437" vertical-offset="655" max-vertical-offset="1258">
+          <caret line="54" column="71" selection-start-line="54" selection-start-column="71" selection-end-line="54" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/dao/ocp/OcpProizvodHome.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="6969" max-vertical-offset="7548">
+          <caret line="455" column="0" selection-start-line="455" selection-start-column="0" selection-end-line="455" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/mvc/ProizvodiController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="217" max-vertical-offset="1547">
+          <caret line="39" column="45" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jboss-deployment-structure.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="895">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jboss-as-spring-mvc-context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="895">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/spring/infrastructure.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="895">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/dao/wo/WoArtikliNaAkcijiHome.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1700">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/web_ordering.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.7798165" vertical-offset="11577" max-vertical-offset="13022">
+          <caret line="641" column="133" selection-start-line="641" selection-start-column="133" selection-end-line="641" selection-end-column="133" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/header.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="846">
+          <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/service/CommonService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="460" max-vertical-offset="1547">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1156">
+          <caret line="15" column="31" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/spring/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
+          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="122" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/domain/ocp/OcpProizvod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="13855" max-vertical-offset="15062">
+          <caret line="815" column="30" selection-start-line="815" selection-start-column="16" selection-end-line="815" selection-end-column="39" />
+          <folding>
+            <marker date="1413665689979" expanded="true" signature="4052:6302" placeholder="select p.PRO..Ocp_Proizvod..." />
+            <marker date="1413665689979" expanded="true" signature="5287:5830" placeholder="select 1 fro..wo_partner_settings..." />
+            <marker date="1413665689979" expanded="true" signature="5876:6186" placeholder="select 1 fro..ocp_klasifikacija_proizvoda..." />
+            <marker date="1413665689979" expanded="true" signature="6427:8766" placeholder="select p.PRO..Ocp_Proizvod..." />
+            <marker date="1413665689979" expanded="true" signature="7654:8197" placeholder="select 1 fro..wo_partner_settings..." />
+            <marker date="1413665689979" expanded="true" signature="8399:8698" placeholder="select 1 fro..ocp_klasifikacija_proizvoda..." />
+            <marker date="1413665689979" expanded="true" signature="8897:11692" placeholder="select p.PRO..Ocp_Proizvod..." />
+            <marker date="1413665689979" expanded="true" signature="10127:10670" placeholder="select 1 fro..wo_partner_settings..." />
+            <marker date="1413665689979" expanded="true" signature="11327:11626" placeholder="select 1 fro..ocp_klasifikacija_proizvoda..." />
+            <marker date="1413665689979" expanded="true" signature="11825:14970" placeholder="select p.PRO..Ocp_Proizvod..." />
+            <marker date="1413665689979" expanded="true" signature="13102:13538" placeholder="select 1 fro..wo_artikli_na_akciji..." />
+            <marker date="1413665689979" expanded="true" signature="13585:14128" placeholder="select 1 fro..wo_partner_settings..." />
+            <marker date="1413665689979" expanded="true" signature="15097:17749" placeholder="select p.PRO..Ocp_Proizvod..." />
+            <marker date="1413665689979" expanded="true" signature="16525:17068" placeholder="select 1 fro..wo_partner_settings..." />
+            <marker date="1413665689979" expanded="true" signature="17886:20942" placeholder="select p.PRO..Ocp_Proizvod..." />
+            <marker date="1413665689979" expanded="true" signature="19308:19851" placeholder="select 1 fro..wo_partner_settings..." />
+            <marker date="1413665689979" expanded="true" signature="20509:20817" placeholder="select 1 fro..ocp_klasifikacija_proizvoda..." />
+            <marker date="1413665689979" expanded="true" signature="21081:23472" placeholder="select p.PRO..Ocp_Proizvod..." />
+            <marker date="1413665689979" expanded="true" signature="22457:23000" placeholder="select 1 fro..wo_partner_settings..." />
+            <marker date="1413665689979" expanded="true" signature="23046:23356" placeholder="select 1 fro..ocp_klasifikacija_proizvoda..." />
+            <marker date="1413665689979" expanded="true" signature="23588:24397" placeholder="select ps.* ..prod_proizvod_pk..." />
+            <marker date="1413665689979" expanded="true" signature="24272:24339" placeholder="-- uslov koj..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/service/BasketBusinessProcessing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="407" max-vertical-offset="10047">
+          <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/mvc/BasketControllerN.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="346" max-vertical-offset="3434">
+          <caret line="37" column="72" selection-start-line="37" selection-start-column="3" selection-end-line="37" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#7028#7051#0" expanded="true" />
+            <element signature="e#9183#9191#0" expanded="true" />
+            <element signature="e#10960#10973#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rs/invado/wo/service/ProductService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3183391" vertical-offset="938" max-vertical-offset="4080">
+          <caret line="89" column="76" selection-start-line="89" selection-start-column="76" selection-end-line="89" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>WebOrdering:war</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Web</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>grails-2.4.3</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>WebOrdering</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
+

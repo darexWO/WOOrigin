@@ -1,0 +1,471 @@
+package rs.invado.wo.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import rs.invado.wo.dao.prod.ProdFinDokumentHome;
+import rs.invado.wo.dao.prod.ProdNacinPlacanjaHome;
+import rs.invado.wo.dao.prod.ProdPoreskaStopaHome;
+import rs.invado.wo.dao.uz.*;
+import rs.invado.wo.dao.wo.WoRezervacijaHome;
+import rs.invado.wo.dao.wo.WoSetPoNacinPlacanjaHome;
+import rs.invado.wo.domain.ocp.OcpProizvod;
+import rs.invado.wo.domain.prod.ProdFinDokument;
+import rs.invado.wo.domain.prod.ProdPpRabat;
+import rs.invado.wo.domain.uz.*;
+import rs.invado.wo.domain.wo.WoParametri;
+import rs.invado.wo.domain.wo.WoRezervacija;
+import rs.invado.wo.domain.wo.WoSetPoNacinPlacanja;
+import rs.invado.wo.dto.CompanySetting;
+import rs.invado.wo.dto.User;
+import rs.invado.wo.util.WOException;
+import rs.invado.wo.util.WOExceptionCodes;
+
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.*;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: nikola
+ * Date: 13.2.13.
+ * Time: 22.54
+ * To change this template use File | Settings | File Templates.
+ */
+@Repository
+@Transactional
+@Service
+public class BasketBusinessProcessing {
+
+
+    @Autowired
+    private ProductService productService;
+    @Autowired
+    private WoRezervacijaHome woRezervacijaDAO;
+    @Autowired
+    private UzStanjeZalihaSkladistaHome uzStanjeZalihaSkladistaDAO;
+    @Autowired
+    private WoSetPoNacinPlacanjaHome woSetPoNacinPlacanjaDAO;
+    @Autowired
+    private UzSkladisteHome uzSkladisteDAO;
+    @Autowired
+    private UzDokumentHome uzDokumentDAO;
+    @Autowired
+    private ProdNacinPlacanjaHome prodNacinPlacanjaDAO;
+    @Autowired
+    private UzDokumentUsloviPlacanjaHome uzDokumentUsloviPlacanjaDAO;
+    @Autowired
+    private UzDokumentStavkaHome uzDokumentStavkaDAO;
+    @Autowired
+    private ProdFinDokumentHome prodFinDokumentDAO;
+    @Autowired
+    private UzDokumentOjHome uzDokumentOjDAO;
+    @Autowired
+    private ProdPoreskaStopaHome prodPoreskaStopaDAO;
+
+
+    private enum ProAkcija {
+        D, N
+    }
+
+    ;
+
+    private WoRezervacija getBasketElement(Map<Integer, WoRezervacija> basket, Integer proizvod) {
+        return basket.get(proizvod);
+    }
+
+    private void addBasketElement(Map<Integer, WoRezervacija> basket, Integer proizvod, WoRezervacija woRezervacija) {
+        basket.put(proizvod, woRezervacija);
+    }
+
+    private void updateExistingBasketElemnt(WoRezervacija woRezervacija, BigDecimal kolicinaZaRezervaciju, BigDecimal operand) {
+        woRezervacija.setKolicina(woRezervacija.getKolicina().add(kolicinaZaRezervaciju.multiply(operand)));
+        woRezervacija.setVrednost(woRezervacija.getKolicina().multiply(woRezervacija.getCena()).setScale(3, RoundingMode.HALF_EVEN));
+    }
+
+    public void increaseReservation(OcpProizvod ocpProizvod, int currentOJ, BigDecimal narucenaKolicina, String sessionId, User user) throws WOException {
+
+        //poevećaj rezervaciju u magacinu
+        UzStanjeZalihaSkladistaId uzStanjeZalihaSkladistaId = new UzStanjeZalihaSkladistaId();
+        uzStanjeZalihaSkladistaId.setIdSkladista(ocpProizvod.getMaticnoSkladiste());
+        uzStanjeZalihaSkladistaId.setProizvod(ocpProizvod.getProizvod());
+        UzStanjeZalihaSkladista uzStanjeZalihaSkladista = uzStanjeZalihaSkladistaDAO.findById(uzStanjeZalihaSkladistaId);
+        if (narucenaKolicina.multiply(ocpProizvod.getKolicinaPoPakovanju())
+                .compareTo(uzStanjeZalihaSkladista.getKolicinaPoStanjuZ().subtract(uzStanjeZalihaSkladista.getRezervisanaKol())) == 1) {
+            throw new WOException(WOExceptionCodes.WO_INSUFFICIENT_SKU_QUANTITY);
+        } else {
+            uzStanjeZalihaSkladistaDAO.azurirajRezervisanuKolicinu(uzStanjeZalihaSkladistaId, narucenaKolicina.multiply(ocpProizvod.getKolicinaPoPakovanju()).doubleValue(), 1);
+
+            /*kolciina za rezervaciju se množi sa operacijom tako da se količina u objektu povećava ako je vrednost operacije 1,
+  smanjuje ako je vrednost operacije -1 što je slučaj kod umanjenja*/
+            BigDecimal operacija = new BigDecimal(1);
+            //insertuj stavku u wo_rezervacija za tekuću sesiju
+            WoRezervacija woRezervacija = getBasketElement(user.getBasket(), ocpProizvod.getProizvod());
+            if (woRezervacija != null) {
+                updateExistingBasketElemnt(woRezervacija, narucenaKolicina.multiply(ocpProizvod.getKolicinaPoPakovanju()), operacija);
+                WoRezervacija woRezervacijaPersistent = woRezervacijaDAO.findById(woRezervacija.getId());
+                woRezervacijaPersistent.setKolicina(woRezervacija.getKolicina());
+                user.setOrderValue(user.getOrderValue().add(woRezervacija.getCena().multiply(woRezervacija.getKolicina())).setScale(3, RoundingMode.HALF_EVEN));
+                user.setOrderValueWithTax(user.getOrderValue().add(user.getOrderValue().multiply(ocpProizvod.getStopaPoreza()
+                        .divide(new BigDecimal("100")))).setScale(3, RoundingMode.HALF_EVEN));
+                woRezervacijaDAO.persist(woRezervacijaPersistent);
+            } else {
+                woRezervacija = new WoRezervacija();
+                woRezervacija.setAkcija(" ");
+                if (ocpProizvod.getTipAkcije() != null) {
+                    if (ocpProizvod.getTipAkcije().equals(ProductService.PROIZVODI_NA_AKCIJI)
+                            || ocpProizvod.getTipAkcije().equals(ProductService.PROIZVODI_NA_RASPRODAJI)
+                            || ocpProizvod.getTipAkcije().equals(ProductService.IZDVOJENA_AKCIJA)) {
+                        woRezervacija.setAkcija("D");
+                    }
+                }
+                woRezervacija.setCena(ocpProizvod.getCena());
+                woRezervacija.setDatumivreme(new Timestamp(Calendar.getInstance().getTimeInMillis()));
+                woRezervacija.setIdjedinicemere(ocpProizvod.getJedinicaMere().getIdJediniceMere());
+                woRezervacija.setIdSkladista(ocpProizvod.getMaticnoSkladiste());
+                woRezervacija.setKolicina(narucenaKolicina.multiply(ocpProizvod.getKolicinaPoPakovanju()));
+                woRezervacija.setPoslovniPartner(user.getWoPartnerSetting().get(0).getPoslovniPartner().getPoslovniPartner());
+                woRezervacija.setProizvod(ocpProizvod);
+                woRezervacija.setStatusRezervacije(1);
+                woRezervacija.setSessionid(sessionId);
+                woRezervacija.setRabat((productService.getRabatZaProizvod(ocpProizvod.getProizvod(), user.getWoPartnerSetting().get(0).getPoslovniPartner().getPoslovniPartner(), currentOJ)).getRabat());
+                if (woRezervacija.getRabat() == null || (ocpProizvod.getTipAkcije() != null && (ocpProizvod.getTipAkcije().equals(ProductService.PROIZVODI_NA_AKCIJI)
+                        || ocpProizvod.getTipAkcije().equals(ProductService.IZDVOJENA_AKCIJA)
+                        || ocpProizvod.getTipAkcije().equals(ProductService.PROIZVODI_NA_RASPRODAJI))))
+                    woRezervacija.setRabat(new BigDecimal(0));
+                woRezervacija.setVrednost(woRezervacija.getKolicina().multiply(woRezervacija.getCena()).setScale(3, RoundingMode.HALF_EVEN));
+                woRezervacija.setVrednostSaPorezom(woRezervacija.getVrednost()
+                        .add(ocpProizvod.getStopaPoreza().multiply(woRezervacija.getVrednost().divide(new BigDecimal("100")))).setScale(3, RoundingMode.HALF_EVEN));
+                user.setOrderValue(user.getOrderValue().add(woRezervacija.getCena().multiply(woRezervacija.getKolicina())).setScale(3, RoundingMode.HALF_EVEN));
+                user.setOrderValueWithTax(user.getOrderValueWithTax().add(woRezervacija.getCena()
+                        .multiply(narucenaKolicina.multiply(ocpProizvod.getKolicinaPoPakovanju())).add(woRezervacija.getCena()
+                                .multiply(narucenaKolicina.multiply(ocpProizvod.getKolicinaPoPakovanju())).multiply(ocpProizvod.getStopaPoreza().divide(new BigDecimal("100"))))).setScale(3, RoundingMode.HALF_EVEN));
+                woRezervacija.setWoUser(user.getWoUser());
+                woRezervacijaDAO.persist(woRezervacija);
+                addBasketElement(user.getBasket(), ocpProizvod.getProizvod(), woRezervacija);
+            }
+            //umanjiti kolicinu rasplozivu na objektu.
+            ocpProizvod.setRaspolozivo(ocpProizvod.getRaspolozivo().subtract(narucenaKolicina.multiply(ocpProizvod.getKolicinaPoPakovanju())));
+            ocpProizvod.setKolUAltJM(ocpProizvod.getRaspolozivo().divide(ocpProizvod.getKolicinaPoPakovanju(), 0, RoundingMode.FLOOR).intValue());
+        }
+
+    }
+
+    public void decreaseReservation(OcpProizvod ocpProizvod, int currentOJ, BigDecimal narucenaKolicina, String sessionId, User user) {
+
+        // komentar dat u metodi increaseReservation
+
+        BigDecimal operacija = new BigDecimal(-1);
+        BigDecimal vrednost = new BigDecimal("0");
+        BigDecimal novaVrednost = new BigDecimal("0");
+        WoRezervacija woRezervacija = getBasketElement(user.getBasket(), ocpProizvod.getProizvod());
+        if (woRezervacija != null) {
+            if (woRezervacija.getKolicina().compareTo(narucenaKolicina) == 0) {
+                WoRezervacija woRezervacijaPersistent = woRezervacijaDAO.findById(woRezervacija.getId());
+                vrednost = woRezervacijaPersistent.getKolicina().multiply(woRezervacija.getCena()).setScale(3, RoundingMode.HALF_EVEN);
+                user.setOrderValue(user.getOrderValue().subtract(woRezervacijaPersistent.getKolicina().multiply(woRezervacija.getCena())).setScale(3, RoundingMode.HALF_EVEN));
+                user.getBasket().remove(ocpProizvod.getProizvod());
+                woRezervacijaDAO.remove(woRezervacijaPersistent);
+
+            } else {
+                vrednost = woRezervacija.getVrednost();
+                updateExistingBasketElemnt(woRezervacija, narucenaKolicina, operacija);
+                user.setOrderValue(user.getOrderValue().subtract(vrednost.subtract(woRezervacija.getVrednost())).setScale(3, RoundingMode.HALF_EVEN));
+
+            }
+        }
+        if (vrednost.doubleValue() != woRezervacija.getVrednost().doubleValue())
+            novaVrednost = woRezervacija.getVrednost();
+
+        user.setOrderValueWithTax(user.getOrderValueWithTax().subtract((vrednost.subtract(novaVrednost))
+                .add((vrednost.subtract(novaVrednost)).multiply(ocpProizvod.getStopaPoreza()
+                        .divide(new BigDecimal("100"))))).setScale(3, RoundingMode.HALF_EVEN));
+        UzStanjeZalihaSkladistaId uzStanjeZalihaSkladistaId = new UzStanjeZalihaSkladistaId();
+        uzStanjeZalihaSkladistaId.setIdSkladista(woRezervacija.getIdSkladista());
+        uzStanjeZalihaSkladistaId.setProizvod(woRezervacija.getProizvod().getProizvod());
+        uzStanjeZalihaSkladistaDAO.azurirajRezervisanuKolicinu(uzStanjeZalihaSkladistaId, narucenaKolicina.doubleValue(), -1);
+
+        ocpProizvod.setRaspolozivo(ocpProizvod.getRaspolozivo().add(narucenaKolicina));
+        ocpProizvod.setKolUAltJM(ocpProizvod.getRaspolozivo().divide(ocpProizvod.getKolicinaPoPakovanju(), 0, RoundingMode.FLOOR).intValue());
+    }
+
+    public void releaseReservation(String sessionId) {
+
+        List<WoRezervacija> woRezervacijaList = woRezervacijaDAO.findBySessionId(sessionId);
+        if (woRezervacijaList.size() != 0) {
+            for (WoRezervacija woRezervacija : woRezervacijaList) {
+
+                UzStanjeZalihaSkladistaId uzStanjeZalihaSkladistaId = new UzStanjeZalihaSkladistaId();
+                uzStanjeZalihaSkladistaId.setIdSkladista(woRezervacija.getIdSkladista());
+                uzStanjeZalihaSkladistaId.setProizvod(woRezervacija.getProizvod().getProizvod());
+
+                uzStanjeZalihaSkladistaDAO.azurirajRezervisanuKolicinu(uzStanjeZalihaSkladistaId,
+                        woRezervacija.getKolicina().doubleValue(), -1);
+
+                woRezervacijaDAO.remove(woRezervacija);
+            }
+        }
+    }
+
+
+    public List<ProdFinDokument> chceckOutBasket(User user, CompanySetting cs, String nacinPlacanja, int prevoz, String adresa,
+                                                 Integer OJ, String sessionId) {
+
+
+        //kreiraj skladišna dokumenta
+        //kreiraj finansijkka dokumenta
+
+        SimpleDateFormat formatDatum = new SimpleDateFormat("dd.MM.yyyy");
+        SimpleDateFormat formatDatumYear = new SimpleDateFormat("yyyy");
+        Calendar datum = Calendar.getInstance();
+        Integer year = Integer.valueOf(datum.get(Calendar.YEAR));
+        Date datumPromene = datum.getTime();
+
+        UzSkladiste skl = new UzSkladiste();
+        Map<String, UzDokumentId> dokumentaMap = new HashMap<String, UzDokumentId>();
+        List<ProdFinDokument> prodFinDokuments = new ArrayList<ProdFinDokument>(0);
+        Iterator it = cs.getKompanijskiParametri().get(OJ).getWoSetPoNacinPlacanja().iterator();
+        while (it.hasNext()) {
+            //odredi vrstu dokumenta na osnovu način plaćanja
+            WoSetPoNacinPlacanja woSetPoNacinPlacanja = (WoSetPoNacinPlacanja) it.next();
+            if (woSetPoNacinPlacanja.getProdNacinPlacanja().getNacin().equals(nacinPlacanja)) {
+                Integer idVd;
+                idVd = woSetPoNacinPlacanja.getIdVdSkldok();
+            }
+        }
+        it = user.getWoPartnerSetting().get(0).getPoslovniPartner().getProdPpRabats().iterator();
+        short datumValute = 0;
+        while (it.hasNext()) {
+            //odredi maximalni rok plaćanja
+            ProdPpRabat prodPpRabat = (ProdPpRabat) it.next();
+            if (prodPpRabat.getDatumDo().compareTo(datumPromene) == 1 && prodPpRabat.getIdVd() == null) {
+                datumValute = prodPpRabat.getMaxRokPlacanja();
+            }
+        }
+        UzDokument uzDokument = new UzDokument();
+
+
+        if (!nacinPlacanja.equals("AVA")) {
+            it = user.getBasket().entrySet().iterator();
+            short index = 0;
+            while (it.hasNext()) {
+
+                Map.Entry mapWoRezervacija = (Map.Entry) it.next();
+                WoRezervacija woRezervacija = (WoRezervacija) mapWoRezervacija.getValue();
+                WoRezervacija woRezervacijaPersistent = woRezervacijaDAO.findById(woRezervacija.getId());
+                woRezervacijaPersistent.setStatusRezervacije(2);
+                woRezervacijaPersistent.setEkstraRabat(woRezervacija.getEkstraRabat());
+                woRezervacijaDAO.persist(woRezervacijaPersistent);
+                //ako nije način plaćanja AVA onda sve stavke idu  na jednom dokumentu
+                skl = uzSkladisteDAO.findById(woRezervacija.getIdSkladista());
+
+                Integer partner = new Integer(0);
+                if (!dokumentaMap.containsKey(skl.getIdSkladista() + "")) {
+                    uzDokument = new UzDokument();
+                    //insertuj novi dokument
+                    if (nacinPlacanja.equals("CAS")) {
+                        partner = user.getWoPartnerSetting().get(0).getKfl();
+
+                    } else {
+                        partner = user.getWoPartnerSetting().get(0).getPoslovniPartner().getPoslovniPartner();
+                    }
+                    UzDokumentId id = new UzDokumentId();
+                    WoSetPoNacinPlacanja woSetPoNacinPlacanja = woSetPoNacinPlacanjaDAO.findByNacinPlacanjaAndParameters((WoParametri) cs.getKompanijskiParametri().get(OJ),
+                            prodNacinPlacanjaDAO.findById(nacinPlacanja));
+                    id.setIdVd(woSetPoNacinPlacanja.getIdVdSkldok().shortValue());
+                    id.setIdDokumenta(uzDokumentOjDAO.spkSklDokumentSlozen(woSetPoNacinPlacanja.getIdVdSkldok(), OJ, year, skl.getIdSkladista()));
+                    uzDokument.setId(id);
+                    uzDokument.setRadnikU(Integer.valueOf(user.getWoUser().getRadnik().getRadbr()));
+                    uzDokument.setStatusDokumenta("E");
+                    uzDokument.setRadnikS(Integer.valueOf(user.getWoUser().getRadnik().getRadbr()));
+                    uzDokument.setUzSkladiste(skl);
+                    uzDokument.setPoslovniPartnerPk(partner);
+                    uzDokument.setOrganizacionaJedinicaKd(OJ);
+                    uzDokument.setOrganizacionaJedinicaPk(OJ);
+                    uzDokument.setPoslovniPartnerKd(partner);
+                    uzDokument.setPoslovniPartnerOt(user.getWoPartnerSetting().get(0).getPoslovniPartner().getPoslovniPartner());
+                    uzDokument.setAdresaIsporukeRobe(adresa);
+                    uzDokument.setDatumPromene(datumPromene);
+                    uzDokument.setSpoljniBrojDokumenta(sessionId);
+                    uzDokument.setDatumOvere(datumPromene);
+                    uzDokument.setOrganizacionaJedinicaC(user.getWoPartnerSetting().get(0).getOrganizacionaJedinica());
+                    uzDokument.setIdCenovnik(user.getWoPartnerSetting().get(0).getIdCenovnik());
+                    uzDokument.setIdKlasaCene(user.getWoPartnerSetting().get(0).getIdKlasaCene());
+                    uzDokument.setOrganizacionaJedinicaReal(skl.getOrganizacionaJedinicaJe());
+                    uzDokument.setRadnikTp(Integer.valueOf(user.getWoUser().getRadnik().getRadbr()));
+                    uzDokument.setRadnikOv(Integer.valueOf(user.getWoUser().getRadnik().getRadbr()));
+                    uzDokument.setIdSkladistaZa(uzSkladisteDAO.findByOjAndPurpose(skl.getOrganizacionaJedinicaJe(), 97).getIdSkladista());
+                    uzDokument.setVrstaStavke(woSetPoNacinPlacanja.getVrstastavke());
+                    uzDokument.setVrstaPrevoza(prevoz);
+                    uzDokument.setGodina(year);
+                    uzDokumentDAO.persist(uzDokument);
+                    UzDokument postoji = uzDokumentDAO.chkUzDokument(uzDokument.getId().getIdDokumenta());
+
+                    dokumentaMap.put(skl.getIdSkladista() + "", id);
+
+                    UzDokumentUsloviPlacanjaId uzDokumentUsloviPlacanjaId = new UzDokumentUsloviPlacanjaId();
+                    uzDokumentUsloviPlacanjaId.setIdDokumenta(uzDokument.getId().getIdDokumenta());
+                    uzDokumentUsloviPlacanjaId.setIdVd(uzDokument.getId().getIdVd());
+                    UzDokumentUsloviPlacanja uzDokumentUsloviPlacanja = new UzDokumentUsloviPlacanja();
+                    uzDokumentUsloviPlacanja.setId(uzDokumentUsloviPlacanjaId);
+                    uzDokumentUsloviPlacanja.setProcKassaSkonto(new BigDecimal(0));
+                    uzDokumentUsloviPlacanja.setIdValute(user.getValuta().getIdValute());
+                    if (nacinPlacanja.equals("CAS")) {
+                        uzDokumentUsloviPlacanja.setBrojDanaValute(0);
+                    } else {
+                        uzDokumentUsloviPlacanja.setBrojDanaValute(datumValute);
+                    }
+                    uzDokumentUsloviPlacanja.setNacinPlacanja(nacinPlacanja);
+                    uzDokumentUsloviPlacanja.setKreiratiFakturu(true);
+
+                    uzDokumentUsloviPlacanjaDAO.persist(uzDokumentUsloviPlacanja);
+                }
+
+                UzDokumentStavkaId uzDokumentStavkaId = new UzDokumentStavkaId();
+                uzDokumentStavkaId.setIdDokumenta(dokumentaMap.get(skl.getIdSkladista() + "").getIdDokumenta());
+                uzDokumentStavkaId.setIdVd(dokumentaMap.get(skl.getIdSkladista() + "").getIdVd());
+                uzDokumentStavkaId.setRbStavke(++index);
+                UzDokumentStavka uzDokumentStavka = new UzDokumentStavka();
+                uzDokumentStavka.setId(uzDokumentStavkaId);
+                uzDokumentStavka.setStatusStavke("A");
+                uzDokumentStavka.setIdJediniceMere(woRezervacija.getIdjedinicemere());
+                uzDokumentStavka.setProizvod(woRezervacija.getProizvod().getProizvod());
+                uzDokumentStavka.setNivoKvaliteta("Z");
+                uzDokumentStavka.setVrstaPromene(0);
+                uzDokumentStavka.setNavedKol(woRezervacija.getKolicina());
+                if (nacinPlacanja.equals("CAS"))
+// u slučaju plaćanja keš na polazna cena mora biti sa uračunatim porezom te se na cenu iz cenovnika poreska stopa
+                    uzDokumentStavka.setJedinicnaCena(woRezervacija.getCena()
+                            .multiply(prodPoreskaStopaDAO.findPorezPerProizvod(woRezervacija.getProizvod().getProizvod(), OJ, datumPromene)
+                                    .divide(new BigDecimal(100.0)).add(new BigDecimal(1.0)).setScale(3, RoundingMode.HALF_EVEN)));
+                else
+                    uzDokumentStavka.setJedinicnaCena(woRezervacija.getCena());
+
+                uzDokumentStavka.setVrednost(woRezervacija.getKolicina().multiply(woRezervacija.getCena()).setScale(3, RoundingMode.HALF_EVEN));
+                uzDokumentStavka.setVrstaProizvoda(16);
+                uzDokumentStavka.setGodina(year);
+                uzDokumentStavka.setRabat(woRezervacija.getRabat());
+
+                uzDokumentStavkaDAO.persist(uzDokumentStavka);
+
+            }
+        } else {
+            Map<String, UzDokument> dokPoAkciji = new HashMap<String, UzDokument>(0);
+            for (ProAkcija akcija : ProAkcija.values()) {
+                it = user.getBasket().entrySet().iterator();
+                short index = 0;
+                while (it.hasNext()) {
+
+                    Map.Entry mapWoRezervacija = (Map.Entry) it.next();
+                    WoRezervacija woRezervacija = (WoRezervacija) mapWoRezervacija.getValue();
+                    WoRezervacija woRezervacijaPersistent = woRezervacijaDAO.findById(woRezervacija.getId());
+                    woRezervacijaPersistent.setStatusRezervacije(2);
+                    woRezervacijaPersistent.setEkstraRabat(woRezervacija.getEkstraRabat());
+                    woRezervacijaDAO.persist(woRezervacijaPersistent);
+                    //ako nije način plaćanja AVA onda sve stavke idu  na jednom dokumentu
+                    skl = uzSkladisteDAO.findById(woRezervacija.getIdSkladista());
+                    if (woRezervacija.getAkcija().equals(akcija.toString())
+                            || (woRezervacija.getAkcija() == " " && akcija.toString().equals("N"))) {
+                        if (!dokumentaMap.containsKey(skl.getIdSkladista() + akcija.toString())) {
+                            //insertuj dokument
+                            Integer partner = user.getWoPartnerSetting().get(0).getPoslovniPartner().getPoslovniPartner();
+                            UzDokumentId id = new UzDokumentId();
+                            uzDokument = new UzDokument();
+                            WoSetPoNacinPlacanja woSetPoNacinPlacanja = woSetPoNacinPlacanjaDAO.findByNacinPlacanjaAndParameters((WoParametri) cs.getKompanijskiParametri().get(OJ),
+                                    prodNacinPlacanjaDAO.findById(nacinPlacanja));
+
+                            id.setIdVd(woSetPoNacinPlacanja.getIdVdSkldok().shortValue());
+                            id.setIdDokumenta(uzDokumentOjDAO.spkSklDokumentSlozen(woSetPoNacinPlacanja.getIdVdSkldok(), OJ, year, skl.getIdSkladista()));
+
+                            uzDokument.setId(id);
+                            uzDokument.setRadnikU(Integer.valueOf(user.getWoUser().getRadnik().getRadbr()));
+                            uzDokument.setStatusDokumenta("E");
+                            uzDokument.setRadnikS(Integer.valueOf(user.getWoUser().getRadnik().getRadbr()));
+                            uzDokument.setUzSkladiste(skl);
+                            uzDokument.setPoslovniPartnerPk(partner);
+                            uzDokument.setOrganizacionaJedinicaKd(OJ);
+                            uzDokument.setOrganizacionaJedinicaPk(OJ);
+                            uzDokument.setPoslovniPartnerKd(partner);
+                            uzDokument.setPoslovniPartnerOt(user.getWoPartnerSetting().get(0).getPoslovniPartner().getPoslovniPartner());
+                            uzDokument.setAdresaIsporukeRobe(adresa);
+                            uzDokument.setDatumPromene(datumPromene);
+                            uzDokument.setSpoljniBrojDokumenta(sessionId);
+                            uzDokument.setDatumOvere(datumPromene);
+                            uzDokument.setOrganizacionaJedinicaC(user.getWoPartnerSetting().get(0).getOrganizacionaJedinica());
+                            uzDokument.setIdCenovnik(user.getWoPartnerSetting().get(0).getIdCenovnik());
+                            uzDokument.setIdKlasaCene(user.getWoPartnerSetting().get(0).getIdKlasaCene());
+                            uzDokument.setOrganizacionaJedinicaReal(skl.getOrganizacionaJedinicaJe());
+                            uzDokument.setRadnikTp(Integer.valueOf(user.getWoUser().getRadnik().getRadbr()));
+                            uzDokument.setRadnikOv(Integer.valueOf(user.getWoUser().getRadnik().getRadbr()));
+                            uzDokument.setIdSkladistaZa(uzSkladisteDAO.findByOjAndPurpose(skl.getOrganizacionaJedinicaJe(), 97).getIdSkladista());
+                            uzDokument.setVrstaStavke(woSetPoNacinPlacanja.getVrstastavke());
+                            uzDokument.setVrstaPrevoza(prevoz);
+                            uzDokument.setGodina(year);
+
+                            uzDokumentDAO.persist(uzDokument);
+                            dokumentaMap.put(skl.getIdSkladista() + akcija.toString(), id);
+
+                            UzDokumentUsloviPlacanjaId uzDokumentUsloviPlacanjaId = new UzDokumentUsloviPlacanjaId();
+                            uzDokumentUsloviPlacanjaId.setIdDokumenta(uzDokument.getId().getIdDokumenta());
+                            uzDokumentUsloviPlacanjaId.setIdVd(uzDokument.getId().getIdVd());
+                            UzDokumentUsloviPlacanja uzDokumentUsloviPlacanja = new UzDokumentUsloviPlacanja();
+                            uzDokumentUsloviPlacanja.setId(uzDokumentUsloviPlacanjaId);
+                            uzDokumentUsloviPlacanja.setIdValute(user.getValuta().getIdValute());
+                            uzDokumentUsloviPlacanja.setBrojDanaValute(0);
+                            uzDokumentUsloviPlacanja.setNacinPlacanja(nacinPlacanja);
+                            uzDokumentUsloviPlacanja.setKreiratiFakturu(false);
+                            if (woRezervacija.getAkcija() == " " && akcija.toString().equals("N"))
+// kassa sconto u slučaju avansnog plaćanja
+                                uzDokumentUsloviPlacanja.setProcKassaSkonto(new BigDecimal(2));
+
+                            uzDokumentUsloviPlacanjaDAO.persist(uzDokumentUsloviPlacanja);
+                        }
+
+                        UzDokumentStavkaId uzDokumentStavkaId = new UzDokumentStavkaId();
+                        uzDokumentStavkaId.setIdDokumenta(dokumentaMap.get(skl.getIdSkladista() + akcija.toString()).getIdDokumenta());
+                        uzDokumentStavkaId.setIdVd(dokumentaMap.get(skl.getIdSkladista() + akcija.toString()).getIdVd());
+                        uzDokumentStavkaId.setRbStavke(++index);
+                        UzDokumentStavka uzDokumentStavka = new UzDokumentStavka();
+                        uzDokumentStavka.setId(uzDokumentStavkaId);
+                        uzDokumentStavka.setStatusStavke("A");
+                        uzDokumentStavka.setIdJediniceMere(woRezervacija.getIdjedinicemere());
+                        uzDokumentStavka.setProizvod(woRezervacija.getProizvod().getProizvod());
+                        uzDokumentStavka.setNivoKvaliteta("Z");
+                        uzDokumentStavka.setVrstaPromene(0);
+                        uzDokumentStavka.setNavedKol(woRezervacija.getKolicina());
+                        uzDokumentStavka.setJedinicnaCena(woRezervacija.getCena());
+                        uzDokumentStavka.setVrednost(woRezervacija.getKolicina().multiply(woRezervacija.getCena()).setScale(3, RoundingMode.HALF_EVEN));
+                        uzDokumentStavka.setVrstaProizvoda(16);
+                        uzDokumentStavka.setGodina(year);
+                        uzDokumentStavka.setRabat(woRezervacija.getRabat());
+
+                        uzDokumentStavkaDAO.persist(uzDokumentStavka);
+                    }
+                }
+            }
+
+        }
+
+        it = dokumentaMap.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry mapUzDokument = (Map.Entry) it.next();
+            UzDokumentId uzDokumentIdN = (UzDokumentId) mapUzDokument.getValue();
+            if (uzDokumentDAO.findEmptyDokument(uzDokumentIdN.getIdDokumenta()) != null) {
+                UzDokumentUsloviPlacanjaId uzDokumentUsloviPlacanjaIdN = new UzDokumentUsloviPlacanjaId();
+                uzDokumentUsloviPlacanjaIdN.setIdVd(uzDokumentIdN.getIdVd());
+                uzDokumentUsloviPlacanjaIdN.setIdDokumenta(uzDokumentIdN.getIdDokumenta());
+                uzDokumentUsloviPlacanjaDAO.remove(uzDokumentUsloviPlacanjaDAO.findById(uzDokumentUsloviPlacanjaIdN));
+                uzDokumentDAO.remove(uzDokumentDAO.findById(uzDokumentIdN));
+            } else {
+                ProdFinDokument prodFinDokument =
+                        prodFinDokumentDAO.insertFinDOkumentByStoredProcedure(Integer.valueOf(uzDokumentIdN.getIdVd() + ""),
+                                uzDokumentIdN.getIdDokumenta());
+                prodFinDokuments.add(prodFinDokument);
+            }
+        }
+        return prodFinDokuments;
+    }
+}

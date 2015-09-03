@@ -1,0 +1,67 @@
+package rs.invado.wo.domain.prod;
+
+
+import org.omg.CORBA.PRIVATE_MEMBER;
+
+import javax.persistence.*;
+import java.math.BigDecimal;
+import java.util.Date;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: nikola
+ * Date: 29.1.13.
+ * Time: 22.21
+ * To change this template use File | Settings | File Templates.
+ */
+@Entity
+@Table(name = "PROD_PORESKA_STOPA", schema = "DAREX")
+public class ProdPoreskaStopa {
+
+    private int vrstaPoreza;
+    private Date datumOd;
+    private Date datumDo;
+    private BigDecimal stopaPoreza;
+    private BigDecimal iznosPoreza;
+
+    @Id
+    @Column(name = "VRSTA_POREZA#")
+    public int getVrstaPoreza() {
+        return vrstaPoreza;
+    }
+
+    public void setVrstaPoreza(int vrstaPoreza) {
+        this.vrstaPoreza = vrstaPoreza;
+    }
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "DATUM_OD#")
+    public Date getDatumDo() {
+        return datumDo;
+    }
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "DATUM_DO")
+    public void setDatumDo(Date datumDo) {
+        this.datumDo = datumDo;
+    }
+
+    @Column(name = "STOPA_POREZA")
+    public BigDecimal getStopaPoreza() {
+        return stopaPoreza;
+    }
+
+    public void setStopaPoreza(BigDecimal stopaPoreza) {
+        this.stopaPoreza = stopaPoreza;
+    }
+
+    @Column(name = "IZNOS_POREZA")
+    public BigDecimal getIznosPoreza() {
+        return iznosPoreza;
+    }
+
+    public void setIznosPoreza(BigDecimal iznosPoreza) {
+        this.iznosPoreza = iznosPoreza;
+    }
+
+}

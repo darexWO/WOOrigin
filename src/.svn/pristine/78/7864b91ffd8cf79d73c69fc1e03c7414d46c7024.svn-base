@@ -1,0 +1,12 @@
+kartica.(class)=org.springframework.web.servlet.view.jasperreports.JasperReportsMultiFormatView
+kartica.url=/reports/kartica.jrxml
+kartica.reportDataKey=dataSource
+
+faktura.(class)=org.springframework.web.servlet.view.jasperreports.JasperReportsMultiFormatView
+faktura.url=/reports/faktura.jrxml
+faktura.reportDataKey=dataSource
+#faktura.subReportUrls=/reports/wopdvfakturaNN_logo.jrxml
+#faktura.subReportDataKeys=dataSource
+
+
+

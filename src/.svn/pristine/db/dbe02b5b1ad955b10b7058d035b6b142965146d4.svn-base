@@ -1,0 +1,32 @@
+package rs.invado.wo.dto;
+
+
+import rs.invado.wo.domain.ocp.OcpProizvod;
+
+import java.util.List;
+
+public class Proizvodi {
+    int rowCount;
+    List<OcpProizvod> proizvodiList;
+
+    public Proizvodi(List<OcpProizvod> proizvodiList, int rowCount) {
+        this.proizvodiList=proizvodiList;
+        this.rowCount=rowCount;
+    }
+
+    public int getRowCount() {
+        return rowCount;
+    }
+
+    public void setRowCount(int rowCount) {
+        this.rowCount = rowCount;
+    }
+
+    public List<OcpProizvod> getProizvodList() {
+        return proizvodiList;
+    }
+
+    public void setProizvodList(List<OcpProizvod> proizvodList) {
+        this.proizvodiList = proizvodList;
+    }
+}

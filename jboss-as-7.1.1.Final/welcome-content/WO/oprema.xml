@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="Windows-1250"?>
+<opreme>
+    <oprema id="1">
+	    <naziv>Tiplerica N-R22</naziv>
+		<opis>Proizvodac: Fabrika mašina i procesne opreme Arsenije Spasic, Zrenjanin ostaviti mesta za jos dva- tri reda koliko stane</opis>
+        <cena>1570 EUR</cena>
+		<kontakt>Za sve informacije obratiti se na telefon :&lt;/br&gt; 065 3195 289, kontakt osoba Rajko Knezevic</kontakt>
+		<imgDefault>http://webordering.darex.rs:8080/WO/images/medium/585416.jpg</imgDefault>
+        <img small="http://webordering.darex.rs:8080/WO/images/small/585416.jpg"  large="http://webordering.darex.rs:8080/WO/images/large/585416.jpg"/>
+	    <img small="http://webordering.darex.rs:8080/WO/images/small/584614.jpg"  large="http://webordering.darex.rs:8080/WO/images/large/584614.jpg"/>
+	    <img small="http://webordering.darex.rs:8080/WO/images/small/584827.jpg"  large="http://webordering.darex.rs:8080/WO/images/large/584827.jpg"/>
+	</oprema>
+	<oprema id="2">
+	    <naziv>Tiplerica N-R23</naziv>
+		<opis>Proizvodac: Fabrika mašina i procesne opreme Arsenije Spasic, Zrenjanin ostaviti mesta za jos dva- tri reda koliko stane</opis>
+        <cena>1570 EUR</cena>
+		<kontakt>Za sve informacije obratiti se na telefon :&lt;/br&gt; 065 3195 289, kontakt osoba Rajko Knezevic</kontakt>
+		<imgDefault>http://webordering.darex.rs:8080/WO/images/medium/584827.jpg</imgDefault>
+        <img small="http://webordering.darex.rs:8080/WO/images/small/585416.jpg"  large="http://webordering.darex.rs:8080/WO/images/large/585416.jpg"/>
+	    <img small="http://webordering.darex.rs:8080/WO/images/small/584614.jpg"  large="http://webordering.darex.rs:8080/WO/images/large/584614.jpg"/>
+	    <img small="http://webordering.darex.rs:8080/WO/images/small/584827.jpg"  large="http://webordering.darex.rs:8080/WO/images/large/584827.jpg"/>
+    </oprema>
+	<oprema id="3">
+	    <naziv>Tiplerica N-R24</naziv>
+		<opis>Proizvodac: Fabrika mašina i procesne opreme Arsenije Spasic, Zrenjanin ostaviti mesta za jos dva- tri reda koliko stane</opis>
+        <cena>1570 EUR</cena>
+		<kontakt>Za sve informacije obratiti se na telefon :&lt;/br&gt; 065 3195 289, kontakt osoba Rajko Knezevic</kontakt>
+		<imgDefault>http://webordering.darex.rs:8080/WO/images/medium/584614.jpg</imgDefault>
+        <img small="http://webordering.darex.rs:8080/WO/images/small/585416.jpg"  large="http://webordering.darex.rs:8080/WO/images/large/585416.jpg"/>
+	    <img small="http://webordering.darex.rs:8080/WO/images/small/584614.jpg"  large="http://webordering.darex.rs:8080/WO/images/large/584614.jpg"/>
+	    <img small="http://webordering.darex.rs:8080/WO/images/small/584827.jpg"  large="http://webordering.darex.rs:8080/WO/images/large/584827.jpg"/>
+	    <img small="http://webordering.darex.rs:8080/WO/images/small/45934.jpg"   large="http://webordering.darex.rs:8080/WO/images/large/45934.jpg"/>
+    </oprema>
+</opreme>

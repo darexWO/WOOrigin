@@ -1,0 +1,47 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building WebOrdering 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[WARNING] The artifact org.apache.commons:commons-io:jar:1.3.2 has been relocated to commons-io:commons-io:jar:1.3.2
+[INFO] 
+[INFO] --- maven-clean-plugin:2.4.1:clean (default-clean) @ WebOrdering ---
+[INFO] Deleting C:\WebOrdering\src\trunk\target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ WebOrdering ---
+[debug] execute contextualize
+[INFO] Using 'Windows-1250' encoding to copy filtered resources.
+[INFO] Copying 6 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ WebOrdering ---
+[INFO] Compiling 170 source files to C:\WebOrdering\src\trunk\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ WebOrdering ---
+[debug] execute contextualize
+[INFO] Using 'Windows-1250' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ WebOrdering ---
+[INFO] Compiling 8 source files to C:\WebOrdering\src\trunk\target\test-classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] \WebOrdering\src\trunk\src\test\java\rs\invado\wo\test\PeoductServiceTest.java:[74,37] error: method getProizvodiZaBrend in class ProductService cannot be applied to given types;
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 4.197s
+[INFO] Finished at: Sat Mar 23 22:21:21 CET 2013
+[INFO] Final Memory: 26M/307M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:2.3.2:testCompile (default-testCompile) on project WebOrdering: Compilation failure
+[ERROR] \WebOrdering\src\trunk\src\test\java\rs\invado\wo\test\PeoductServiceTest.java:[74,37] error: method getProizvodiZaBrend in class ProductService cannot be applied to given types;
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

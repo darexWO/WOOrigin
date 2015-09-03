@@ -1,0 +1,98 @@
+package rs.invado.wo.test;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.transaction.TransactionConfiguration;
+import org.springframework.transaction.annotation.Transactional;
+import rs.invado.wo.dao.prod.ProdCenovnikHome;
+import rs.invado.wo.domain.ocp.OcpProizvod;
+import rs.invado.wo.dto.CompanySetting;
+import rs.invado.wo.dto.Proizvodi;
+import rs.invado.wo.dto.User;
+import rs.invado.wo.service.AppInitService;
+import rs.invado.wo.service.BasketBusinessProcessing;
+import rs.invado.wo.service.LogOnService;
+import rs.invado.wo.service.ProductService;
+import rs.invado.wo.util.WOException;
+
+import java.math.BigDecimal;
+import java.util.Map;
+
+import static org.junit.Assert.fail;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: nikola
+ * Date: 25.12.12.
+ * Time: 22.08
+ * To change this template use File | Settings | File Templates.
+ */
+
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = {"classpath:test-context.xml",
+        "classpath:/META-INF/spring/applicationContext.xml"})
+@Transactional
+@TransactionConfiguration(defaultRollback = true)
+public class PeoductServiceTest {
+    /*@Autowired
+    private OcpProizvodHome ocpProizvodDAO;*/
+    @Autowired
+    private ProdCenovnikHome prodCenovnikDAO;
+    @Autowired
+    private LogOnService logOnService;
+    @Autowired
+    private AppInitService appInitService;
+    @Autowired
+    private ProductService productService;
+    @Autowired
+    private BasketBusinessProcessing bbp;
+    
+    /*@PersistenceContext
+    private EntityManager entityManager;*/
+
+    @Test
+    public void test() {
+        fail("Not yet implemented");
+    }
+
+
+    @Test
+    public void testProductService() {
+        Integer oj = new Integer(19);
+        CompanySetting cs = appInitService.initApp();
+                System.out.println("aksija je "+ProductService.PROIZVODI_NA_AKCIJI);
+        try{
+        User user = logOnService.logOn("nikola", "nikolab", cs, new Integer(19));
+
+        Map<Integer, BigDecimal> m = prodCenovnikDAO.findCeneMapped(user.getWoPartnerSetting().get(0));
+        int rowCount = 0;
+
+        Proizvodi lp = productService.getProizvodiZaBrend("0101", m, 0, 1000, cs.getKompanijskiParametri().get(oj), user.getWoPartnerSetting(),
+                cs.getTrasportnaPakovanja());
+        /*OcpProizvod ocpProizvod = productService.getProizvodById(110361, m, cs.getKompanijskiParametri().get(oj),
+                user.getWoPartnerSetting(), cs.getTrasportnaPakovanja() );
+        System.out.println("Proizvod je "+ocpProizvod.getPunNazivProizvoda()+" "+ocpProizvod.getNazivProizvoda()+" cs je "+cs.toString());
+        WoRezervacija woRezervacija = bbp.reservation(ocpProizvod, oj, user.getWoPartnerSetting(), new BigDecimal(10.8), "11111111111");*/
+        //Proizvodi lp = productService.getProzivodiNaAkciji("AKCIJA", m, 0, 1000, cs.getKompanijskiParametri().get(oj), user.getWoPartnerSetting());
+        for (OcpProizvod item : lp.getProizvodList()) {
+            //System.out.println(" za Proizvod " + item.getProizvod()+", ");
+            System.out.println(" za Proizvod " + item.getProizvod() + " stanje je  " + item.getUzStanjeZalihaSkladistas().get(0).getKolicinaPoStanjuZ()
+            +" a rezervisano je "+item.getUzStanjeZalihaSkladistas().get(0).getRezervisanaKol()
+                    +" za magacin "+item.getUzStanjeZalihaSkladistas().get(0).getId().getIdSkladista()
+            +" a raspoloziva kolicina je "+item.getRaspolozivo()
+            +" a pakovanje je "+item.getKolicinaPoPakovanju());
+        }
+        }catch (WOException e){
+            System.out.println((e.getMessage()));
+        }
+
+
+    }
+
+}
+
+

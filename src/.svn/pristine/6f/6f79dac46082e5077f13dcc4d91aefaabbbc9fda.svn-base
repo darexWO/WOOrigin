@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	version="1.0">
+	<persistence-unit name="testPU" transaction-type="RESOURCE_LOCAL" >
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>rs.invado.wo.domain.Member</class>
+		<class>rs.invado.wo.domain.ocp.OcpKlasifikacija</class>
+		<class>rs.invado.wo.domain.ocp.OcpProizvod</class>
+		<class>rs.invado.wo.domain.ocp.OcpKlasifikacijaProizvoda</class>
+		<class>rs.invado.wo.domain.ocp.OcpAtributZaKlasifikaciju</class>
+		<class>rs.invado.wo.domain.ocp.OcpAtribut</class>
+		<class>rs.invado.wo.domain.ocp.OcpKlasifikacijaPp</class>
+		<class>rs.invado.wo.domain.ocp.OcpVrstaDokumenta</class>
+		<class>rs.invado.wo.domain.prod.ProdStavkaCenovnika</class>
+        <class>rs.invado.wo.domain.prod.ProdStavkaCenovnikaId</class>
+		<class>rs.invado.wo.domain.prod.ProdCenovnik</class>
+        <class>rs.invado.wo.domain.prod.ProdCenovnikId</class>
+        <class>rs.invado.wo.domain.wo.WoUser</class>
+        <class>rs.invado.wo.domain.wo.WoArtikliNaAkciji</class>
+        <class>rs.invado.wo.domain.wo.WoParametri</class>
+        <class>rs.invado.wo.domain.wo.WoPartnerSetting</class>
+		<properties>
+			 <!-- <property name="hibernate.hbm2ddl.auto" value="update" />  -->
+			<property name="hibernate.show_sql" value="true" />
+		</properties>
+	</persistence-unit>
+</persistence>

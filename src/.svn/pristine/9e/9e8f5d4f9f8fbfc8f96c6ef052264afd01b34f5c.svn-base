@@ -1,0 +1,195 @@
+package rs.invado.wo.test;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.transaction.TransactionConfiguration;
+import org.springframework.transaction.annotation.Transactional;
+import rs.invado.wo.dao.ocp.OcpProizvodHome;
+import rs.invado.wo.dao.prod.ProdCenovnikHome;
+import rs.invado.wo.dao.prod.ProdPpRabatStavkaHome;
+import rs.invado.wo.dao.uz.UzDokumentOjHome;
+import rs.invado.wo.dao.wo.WoDownloadFilesHome;
+import rs.invado.wo.dao.wo.WoDownloadTipHome;
+import rs.invado.wo.domain.ocp.OcpProizvod;
+import rs.invado.wo.domain.wo.WoDownloadFiles;
+import rs.invado.wo.domain.wo.WoDownloadFilesId;
+import rs.invado.wo.domain.wo.WoDownloadTip;
+import rs.invado.wo.dto.CompanySetting;
+import rs.invado.wo.dto.User;
+import rs.invado.wo.service.AppInitService;
+import rs.invado.wo.service.BasketBusinessProcessing;
+import rs.invado.wo.service.LogOnService;
+import rs.invado.wo.service.ProductService;
+import rs.invado.wo.util.WOException;
+
+import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import static org.junit.Assert.fail;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: nikola
+ * Date: 12.1.13.
+ * Time: 21.34
+ * To change this template use File | Settings | File Templates.
+ */
+
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = {"classpath:test-context.xml",
+        "classpath:/META-INF/spring/applicationContext.xml"})
+@Transactional
+@TransactionConfiguration(defaultRollback = false)
+public class BasketTest {
+    @Autowired
+    private OcpProizvodHome ocpProizvodDAO;
+    @Autowired
+    private ProdCenovnikHome prodCenovnikDAO;
+    @Autowired
+    private LogOnService logOnService;
+    @Autowired
+    private AppInitService appInitService;
+    @Autowired
+    private ProductService productService;
+    @Autowired
+    private BasketBusinessProcessing bbp;
+    @Autowired
+    private WoDownloadTipHome woDownloadTipDAO;
+    @Autowired
+    private WoDownloadFilesHome woDownloadFilesDAO;
+    @Autowired
+    private UzDokumentOjHome uzDokumentOjDAO;
+    @Autowired
+    private ProdPpRabatStavkaHome prodPpRabatStavkaDAO;
+
+
+    /*@PersistenceContext
+  private EntityManager entityManager;*/
+
+    @Test
+    public void test() {
+        fail("Not yet implemented");
+    }
+
+
+    @Test
+    public void testRezervacija() throws InterruptedException {
+        Integer oj = new Integer(19);
+        CompanySetting companySetting = appInitService.initApp();
+        System.out.println("aksija je " + ProductService.PROIZVODI_NA_AKCIJI);
+        try {
+            User user = logOnService.logOn("nikola", "nikolab", companySetting, new Integer(19));
+
+            Map<Integer, BigDecimal> m = prodCenovnikDAO.findCeneMapped(user.getWoPartnerSetting().get(0));
+            int rowCount = 0;
+            OcpProizvod ocpProizvod = new OcpProizvod();
+            ocpProizvod = productService.getProizvodById(174963, m, companySetting.getKompanijskiParametri().get(oj), user.getWoPartnerSetting(),
+                    companySetting.getTrasportnaPakovanja());
+            BigDecimal naruceno = new BigDecimal(10);
+            BigDecimal umanjiza = new BigDecimal(5);
+            bbp.increaseReservation(ocpProizvod, oj, new BigDecimal(10.0d), "2929", user);
+            ocpProizvod = productService.getProizvodById(205567, m, companySetting.getKompanijskiParametri().get(oj), user.getWoPartnerSetting(),
+                    companySetting.getTrasportnaPakovanja());
+            bbp.increaseReservation(ocpProizvod, oj, new BigDecimal(10.0d), "2929", user);
+
+            ocpProizvod = productService.getProizvodById(205753, m, companySetting.getKompanijskiParametri().get(oj), user.getWoPartnerSetting(),
+                    companySetting.getTrasportnaPakovanja());
+             bbp.increaseReservation(ocpProizvod, oj, new BigDecimal(10.0d), "2929", user);
+
+            ocpProizvod = productService.getProizvodById(357049, m, companySetting.getKompanijskiParametri().get(oj), user.getWoPartnerSetting(),
+                    companySetting.getTrasportnaPakovanja());
+            bbp.increaseReservation(ocpProizvod, oj, new BigDecimal(10.0d), "2929", user);
+
+            bbp.chceckOutBasket(user, companySetting, "CAS", 2, "Eo ti neka adresa ", oj, "18181818181818");
+        } catch (WOException e) {
+            System.out.println("doslo je do greske u rezervaciji "+e.getMessage());
+        }
+
+
+    }
+
+    @Test
+    public void testDownload() {
+
+
+        BigDecimal komp = new BigDecimal(70);
+        BigDecimal oj = new BigDecimal(40);
+        WoDownloadTip woDownloadTip = new WoDownloadTip();
+        /*woDownloadTip.setIdKompanijeKorisnik(komp);
+        woDownloadTip.setImageUrl("http//nesto/negde/imasliku.jpg");
+        woDownloadTip.setNaziv("DEKLARACIJE");
+        woDownloadTip.setOpis("Grupa aktuelnih DEKLARACIJE DAREXITISON!");
+        woDownloadTip.setOrganizacionaJedinica(oj);*/
+        woDownloadTipDAO.persist(woDownloadTip);
+        List<WoDownloadTip> listaPoK = woDownloadTipDAO.findActivePerCompany(komp);
+        for (WoDownloadTip wotK : listaPoK)
+            System.out.println("Podaci su po komp " + wotK.getImageUrl()+" "+wotK.getNaziv()+" "+komp.intValue());
+        List<WoDownloadTip> listaPoOJ = woDownloadTipDAO.findActivePerOJ(oj);
+        for (WoDownloadTip wotOJ : listaPoOJ)
+            System.out.println("Podaci su po OJ " + wotOJ.getImageUrl());
+    }
+
+    @Test
+    public void testDownloadFile() {
+
+
+        WoDownloadFiles wotro = new WoDownloadFiles();
+        Map<BigDecimal, WoDownloadFiles> lista = new HashMap<BigDecimal, WoDownloadFiles>(0);
+
+        BigDecimal idTipa = new BigDecimal(804901);
+        BigDecimal klasa = new BigDecimal(7);
+        BigDecimal idStavke;
+
+        for (int i = 1; i < 7; i++) {
+            WoDownloadFilesId id = new WoDownloadFilesId();
+            WoDownloadFiles woDownloadFiles = new WoDownloadFiles();
+            idStavke = new BigDecimal(i);
+            id.setIdTipa(idTipa);
+            id.setIdFajla(idStavke);
+            woDownloadFiles.setId(id);
+            woDownloadFiles.setFajlUrl("http://negde/nesto/fajl" + i + ".jpg");
+            woDownloadFiles.setNaziv("ATESTI ZA KLASU 010" + i);
+            woDownloadFiles.setKlasifikacija("010" + i);
+            woDownloadFiles.setOpis("ATESTI su ovo");
+            woDownloadFiles.setVrstaKalsifikacija(klasa);
+            //lista.put(idStavke, woDownloadFiles);
+            System.out.println(" Stavke " + woDownloadFiles.getId().getIdTipa() + " " + woDownloadFiles.getId().getIdFajla());
+            woDownloadFilesDAO.persist(woDownloadFiles);
+        }
+
+        /*for (int i = 1; i < 7; i++) {
+            idStavke = new BigDecimal(i);
+            System.out.println(" Stavke "+lista.get(idStavke).getId().getIdTipa()+" "+lista.get(idStavke).getId().getIdFajla());
+            woDownloadFilesDAO.persist(lista.get(idStavke));
+        }                    */
+
+    }
+
+    @Test
+    public void ojTest() {
+        /*Calendar datum = Calendar.getInstance();
+        Integer year = Integer.valueOf(datum.get(Calendar.YEAR));
+        Date datumPromene = datum.getTime();
+        Object listaRabata = uzDokumentDAO.insertDokumentByStoredProcedure(12, 0,  "E",
+               1, null, null, 10, null, 229, 19, 19, 229,
+               "adresa",  datumPromene, null, "sessionId", null, datumPromene,null, null, null,
+               19,1,18,null, 19,0,0 , null,null,null,null, null, null,null,null,null,
+               10, null, null, null,null,null,null,25,
+               2013, null, null, null, null,null,null, null); */
+        //parametri za dok su 163 19 2013 15
+        System.out.println(uzDokumentOjDAO.spkSklDokumentSlozen(163, 19, 2013, 15));
+
+        //List<ProdPpRabatStavka> listaRabata = (List<ProdPpRabatStavka>) prodPpRabatStavkaDAO.findRabatZaProizvod(3301, 76086, 19);
+        //System.out.println(listaRabata.get(0).getRabat());
+
+
+    }
+
+}
+
