@@ -1,3 +1,4 @@
+<%@page pageEncoding="Windows-1250"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="nivo" value="-1"/>
 
